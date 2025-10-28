@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
 import { ArrowRight, FileText, Zap, BookOpen, Boxes } from "lucide-react";
 
 function FeatureCardBlue({
@@ -45,7 +43,6 @@ function FeatureCardBlue({
 export default function Home() {
 	return (
 		<main className="w-full bg-background">
-			<Navbar />
 
 			{/* Hero Section */}
 			<section className="relative bg-gradient-to-br from-primary/10 via-background to-primary/5 px-4 pt-32 pb-16 sm:px-6 lg:px-8">
@@ -295,8 +292,6 @@ export default function Home() {
 					</Button>
 				</div>
 			</section>
-
-			<Footer />
 		</main>
 	);
 }

@@ -6,7 +6,7 @@ import {
 	SidebarFooter,
 	SidebarTrigger,
 } from '@/components/ui/sidebar';
-import { DashboardSidebarContent } from './dashboard-sidebar-content';
+import { SidebarItems } from './sidebar-items';
 
 export function DashboardSidebar() {
 	return (
@@ -16,7 +16,7 @@ export function DashboardSidebar() {
 			style={{ '--sidebar-width': '14rem' } as React.CSSProperties}
 		>
 			<SidebarContent>
-				<DashboardSidebarContent />
+				<SidebarItems />
 			</SidebarContent>
 
 			<SidebarFooter>

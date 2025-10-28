@@ -1,6 +1,6 @@
 'use client';
 
-import {createContext, useContext, useState, useEffect} from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 interface BreadcrumbContextType {
 	slug: string | null;
@@ -8,10 +8,14 @@ interface BreadcrumbContextType {
 }
 
 const BreadcrumbContext = createContext<BreadcrumbContextType | undefined>(
-	undefined
+	undefined,
 );
 
-export function BreadcrumbProvider({ children }: { children: React.ReactNode }) {
+export function BreadcrumbProvider({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	const [slug, setSlug] = useState<string | null>(null);
 
 	return (
@@ -29,10 +33,10 @@ export function useBreadcrumb() {
 	return context;
 }
 
-export function BreadcrumbSetter({ slug}:{slug: string }) {
-    const {setSlug} = useBreadcrumb();
-    useEffect(() => {
-        setSlug(slug)
-    }, [slug, setSlug])
-    return <></>
+export function BreadcrumbSetter({ slug }: { slug: string }) {
+	const { setSlug } = useBreadcrumb();
+	useEffect(() => {
+		setSlug(slug);
+	}, [slug, setSlug]);
+	return null;
 }

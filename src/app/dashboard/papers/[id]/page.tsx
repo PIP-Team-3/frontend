@@ -1,6 +1,6 @@
-import { BreadcrumbSetter } from '../../components/breadcrumb-context';
-import { getStatusIcon } from '../data/tools';
-import { getPaper } from './data/fetchers';
+import { BreadcrumbSetter } from '../../_components/breadcrumb-context';
+import { getStatusIcon } from '../_data/tools';
+import { getPaper } from './_data/fetchers';
 
 export default async function PaperPage({
 	params,

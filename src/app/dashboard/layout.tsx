@@ -1,10 +1,12 @@
 import type { ReactNode } from 'react';
 import { SidebarInset, SidebarProvider } from '../../components/ui/sidebar';
-import { DashboardHeader } from './components/dashboard-header';
-import { DashboardSidebar } from './components/dashboard-sidebar';
-import { DashboardSidebarMobile } from './components/dashboard-sidebar-mobile';
-import { DashboardMobileSidebarProvider } from './components/dashboard-mobile-sidebar-context';
-import { BreadcrumbProvider } from './components/breadcrumb-context';
+import { BreadcrumbProvider } from './_components/breadcrumb-context';
+import { DashboardSidebar } from './_components/dashboard-sidebar';
+import { Header } from './_components/header';
+import {
+	DashboardMobileSidebarProvider,
+	MobileSidebar,
+} from './_components/mobile-sidebar';
 
 export default function DashboardLayout({
 	children,
@@ -15,12 +17,14 @@ export default function DashboardLayout({
 		<BreadcrumbProvider>
 			<DashboardMobileSidebarProvider>
 				<SidebarProvider className="flex flex-col">
-					<DashboardHeader />
-					<DashboardSidebarMobile />
+					<Header />
+					<MobileSidebar />
 					<div className="flex flex-1">
 						<DashboardSidebar />
 						<SidebarInset>
-							<div className="flex flex-1 flex-col items-center">{children}</div>
+							<div className="flex flex-1 flex-col items-center">
+								{children}
+							</div>
 						</SidebarInset>
 					</div>
 				</SidebarProvider>

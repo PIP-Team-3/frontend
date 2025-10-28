@@ -14,9 +14,9 @@ import { Button } from '../../../components/ui/button';
 import { useIsMobile } from '../../../hooks/use-mobile';
 import { useBreadcrumb } from './breadcrumb-context';
 import { getDashboardItemByPath } from './dashboard-items';
-import { useDashboardMobileSidebar } from './dashboard-mobile-sidebar-context';
+import { useDashboardMobileSidebar } from './mobile-sidebar';
 
-export function DashboardHeader() {
+export function Header() {
 	const url = usePathname();
 	const currentItem = getDashboardItemByPath(url);
 	const { slug } = useBreadcrumb();

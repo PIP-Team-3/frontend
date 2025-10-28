@@ -1,9 +1,12 @@
-import { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { BreadcrumbSetter } from '../_components/breadcrumb-context';
 
 export default function PapersLoading() {
 	return (
 		<div className="pointer-events-none w-full max-w-[1200px] p-8">
+			<BreadcrumbSetter slug="" />
+
 			{/* Header Skeleton */}
 			<div className="mb-8 flex items-center justify-between">
 				<Skeleton className="h-8 w-32 rounded-md" />

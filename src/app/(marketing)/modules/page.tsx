@@ -1,13 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
 import { BookOpen, Sparkles, Zap, ArrowRight, Code2, Users } from "lucide-react";
 
 export default function ModulesPage() {
 	return (
 		<main className="min-h-screen bg-background">
-			<Navbar />
 
 			{/* Hero Section */}
 			<section className="px-4 pt-32 pb-16 sm:px-6 lg:px-8">
@@ -323,8 +320,6 @@ export default function ModulesPage() {
 					</div>
 				</div>
 			</section>
-
-			<Footer />
 		</main>
 	);
 }

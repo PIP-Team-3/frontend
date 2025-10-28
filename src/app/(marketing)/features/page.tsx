@@ -1,25 +1,21 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
-import { FeatureCard } from "@/components/landing/feature-card";
 import {
-	Zap,
+	ArrowRight,
+	BarChart3,
 	BookOpen,
 	Boxes,
-	FileText,
-	BarChart3,
-	Cpu,
 	Clock,
+	Cpu,
+	FileText,
 	Shield,
-	ArrowRight,
-} from "lucide-react";
+	Zap,
+} from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { FeatureCard } from '../_components/feature-card';
 
 export default function FeaturesPage() {
 	return (
 		<main className="min-h-screen bg-background">
-			<Navbar />
-
 			{/* Hero Section */}
 			<section className="px-4 pt-32 pb-16 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-7xl">
@@ -36,8 +32,8 @@ export default function FeaturesPage() {
 					</h1>
 
 					<p className="max-w-2xl text-lg text-muted-foreground">
-						Everything you need to understand, validate, and build upon research papers
-						with cutting-edge AI technology.
+						Everything you need to understand, validate, and build upon research
+						papers with cutting-edge AI technology.
 					</p>
 				</div>
 			</section>
@@ -101,26 +97,37 @@ export default function FeaturesPage() {
 					{/* AI Extraction */}
 					<div className="mb-16 grid items-center gap-8 md:grid-cols-2">
 						<div>
-							<h3 className="mb-4 font-bold text-2xl">AI-Powered Information Extraction</h3>
+							<h3 className="mb-4 font-bold text-2xl">
+								AI-Powered Information Extraction
+							</h3>
 							<p className="mb-6 text-muted-foreground">
-								Our advanced AI agents understand the nuances of academic writing and extract:
+								Our advanced AI agents understand the nuances of academic
+								writing and extract:
 							</p>
 							<ul className="mb-8 space-y-3">
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Primary research claims and hypotheses</span>
+									<span className="text-sm">
+										Primary research claims and hypotheses
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Experimental methodologies and procedures</span>
+									<span className="text-sm">
+										Experimental methodologies and procedures
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Key findings and statistical results</span>
+									<span className="text-sm">
+										Key findings and statistical results
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Dependencies between experiments</span>
+									<span className="text-sm">
+										Dependencies between experiments
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
@@ -139,22 +146,31 @@ export default function FeaturesPage() {
 							<BookOpen className="h-32 w-32 text-primary/30" />
 						</div>
 						<div className="md:order-1">
-							<h3 className="mb-4 font-bold text-2xl">Auto-Generated Mock Datasets</h3>
+							<h3 className="mb-4 font-bold text-2xl">
+								Auto-Generated Mock Datasets
+							</h3>
 							<p className="mb-6 text-muted-foreground">
-								Create realistic datasets that match your paper's characteristics:
+								Create realistic datasets that match your paper's
+								characteristics:
 							</p>
 							<ul className="mb-8 space-y-3">
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Distribution patterns matching paper data</span>
+									<span className="text-sm">
+										Distribution patterns matching paper data
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Statistical properties preserved</span>
+									<span className="text-sm">
+										Statistical properties preserved
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Multiple dataset variations available</span>
+									<span className="text-sm">
+										Multiple dataset variations available
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
@@ -162,7 +178,9 @@ export default function FeaturesPage() {
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Privacy-preserving synthetic data</span>
+									<span className="text-sm">
+										Privacy-preserving synthetic data
+									</span>
 								</li>
 							</ul>
 						</div>
@@ -171,14 +189,18 @@ export default function FeaturesPage() {
 					{/* Jupyter Notebooks */}
 					<div className="mb-16 grid items-center gap-8 md:grid-cols-2">
 						<div>
-							<h3 className="mb-4 font-bold text-2xl">Ready-to-Run Jupyter Notebooks</h3>
+							<h3 className="mb-4 font-bold text-2xl">
+								Ready-to-Run Jupyter Notebooks
+							</h3>
 							<p className="mb-6 text-muted-foreground">
 								Get complete, executable Python notebooks with:
 							</p>
 							<ul className="mb-8 space-y-3">
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Implementation of paper methodologies</span>
+									<span className="text-sm">
+										Implementation of paper methodologies
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
@@ -190,11 +212,15 @@ export default function FeaturesPage() {
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Result validation and comparison</span>
+									<span className="text-sm">
+										Result validation and comparison
+									</span>
 								</li>
 								<li className="flex items-start gap-3">
 									<div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
-									<span className="text-sm">Fully commented and documented code</span>
+									<span className="text-sm">
+										Fully commented and documented code
+									</span>
 								</li>
 							</ul>
 						</div>
@@ -213,10 +239,12 @@ export default function FeaturesPage() {
 					<div className="grid gap-6 md:grid-cols-2">
 						<div className="rounded-lg border border-border bg-background p-8">
 							<Clock className="mb-4 h-8 w-8 text-primary" />
-							<h3 className="mb-3 font-semibold text-xl">Lightning Fast Processing</h3>
+							<h3 className="mb-3 font-semibold text-xl">
+								Lightning Fast Processing
+							</h3>
 							<p className="text-muted-foreground">
-								Analyze papers in seconds, not hours. Our optimized AI pipeline delivers
-								results instantly.
+								Analyze papers in seconds, not hours. Our optimized AI pipeline
+								delivers results instantly.
 							</p>
 						</div>
 
@@ -224,17 +252,19 @@ export default function FeaturesPage() {
 							<Shield className="mb-4 h-8 w-8 text-primary" />
 							<h3 className="mb-3 font-semibold text-xl">Privacy First</h3>
 							<p className="text-muted-foreground">
-								Your papers and data are private. We don't store or use your content for
-								training.
+								Your papers and data are private. We don't store or use your
+								content for training.
 							</p>
 						</div>
 
 						<div className="rounded-lg border border-border bg-background p-8">
 							<Boxes className="mb-4 h-8 w-8 text-primary" />
-							<h3 className="mb-3 font-semibold text-xl">Extensible Architecture</h3>
+							<h3 className="mb-3 font-semibold text-xl">
+								Extensible Architecture
+							</h3>
 							<p className="text-muted-foreground">
-								Add custom modules to extend functionality. Create specialized processors
-								for your use cases.
+								Add custom modules to extend functionality. Create specialized
+								processors for your use cases.
 							</p>
 						</div>
 
@@ -242,8 +272,8 @@ export default function FeaturesPage() {
 							<BarChart3 className="mb-4 h-8 w-8 text-primary" />
 							<h3 className="mb-3 font-semibold text-xl">Rich Analytics</h3>
 							<p className="text-muted-foreground">
-								Get detailed statistics and insights about paper contents and analysis
-								results.
+								Get detailed statistics and insights about paper contents and
+								analysis results.
 							</p>
 						</div>
 					</div>
@@ -253,7 +283,9 @@ export default function FeaturesPage() {
 			{/* CTA Section */}
 			<section className="px-4 py-16 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-3xl text-center">
-					<h2 className="mb-4 font-bold text-3xl">Experience These Features Today</h2>
+					<h2 className="mb-4 font-bold text-3xl">
+						Experience These Features Today
+					</h2>
 					<p className="mb-8 text-lg text-muted-foreground">
 						Start analyzing research papers with our powerful AI agents.
 					</p>
@@ -264,8 +296,6 @@ export default function FeaturesPage() {
 					</Button>
 				</div>
 			</section>
-
-			<Footer />
 		</main>
 	);
 }

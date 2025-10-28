@@ -1,7 +1,7 @@
-import { BreadcrumbSetter } from '../components/breadcrumb-context';
-import { PapersGrid } from './components/papers-grid';
-import { PapersHeader } from './components/papers-header';
-import { getAllPapers } from './data/fetchers';
+import { BreadcrumbSetter } from '../_components/breadcrumb-context';
+import { PapersGrid } from './_components/papers-grid';
+import { PapersHeader } from './_components/papers-header';
+import { getAllPapers } from './_data/fetchers';
 
 export default async function PapersPage() {
 	const papers = await getAllPapers();

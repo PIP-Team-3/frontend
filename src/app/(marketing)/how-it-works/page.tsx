@@ -1,98 +1,94 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/landing/navbar";
-import { Footer } from "@/components/landing/footer";
 import {
-	Upload,
-	Brain,
-	BarChart3,
-	Sparkles,
-	FileJson,
-	Code,
-	CheckCircle2,
 	ArrowRight,
-} from "lucide-react";
+	BarChart3,
+	Brain,
+	CheckCircle2,
+	Code,
+	FileJson,
+	Sparkles,
+	Upload,
+} from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function HowItWorksPage() {
 	const steps = [
 		{
 			number: 1,
-			title: "Upload Your Paper",
+			title: 'Upload Your Paper',
 			description:
-				"Upload a research paper as a PDF or paste the text directly into Paper2Notebook.",
+				'Upload a research paper as a PDF or paste the text directly into Paper2Notebook.',
 			icon: Upload,
 			details: [
-				"Supports PDF, text, and markdown formats",
-				"Automatic format detection and parsing",
-				"Preview before processing",
+				'Supports PDF, text, and markdown formats',
+				'Automatic format detection and parsing',
+				'Preview before processing',
 			],
 		},
 		{
 			number: 2,
-			title: "AI Extracts Information",
+			title: 'AI Extracts Information',
 			description:
-				"Our AI agents analyze the paper and extract key information including claims, methodologies, and results.",
+				'Our AI agents analyze the paper and extract key information including claims, methodologies, and results.',
 			icon: Brain,
 			details: [
-				"Identifies primary and secondary claims",
-				"Extracts experimental methodologies",
-				"Captures quantitative and qualitative findings",
+				'Identifies primary and secondary claims',
+				'Extracts experimental methodologies',
+				'Captures quantitative and qualitative findings',
 			],
 		},
 		{
 			number: 3,
-			title: "Generate Notebook",
+			title: 'Generate Notebook',
 			description:
-				"Automatically create a Python Jupyter notebook with mock datasets and test cases for each claim.",
+				'Automatically create a Python Jupyter notebook with mock datasets and test cases for each claim.',
 			icon: Code,
 			details: [
-				"Auto-generated test implementations",
-				"Mock datasets matching paper characteristics",
-				"Visualization and analysis code",
+				'Auto-generated test implementations',
+				'Mock datasets matching paper characteristics',
+				'Visualization and analysis code',
 			],
 		},
 		{
 			number: 4,
-			title: "Apply Modules",
+			title: 'Apply Modules',
 			description:
-				"Extend the analysis with specialized modules like Storybook to create additional insights.",
+				'Extend the analysis with specialized modules like Storybook to create additional insights.',
 			icon: Sparkles,
 			details: [
-				"Storybook: Create simple story explanations",
-				"Comparison: Compare with other papers",
-				"Summary: Generate abstracts and overviews",
+				'Storybook: Create simple story explanations',
+				'Comparison: Compare with other papers',
+				'Summary: Generate abstracts and overviews',
 			],
 		},
 		{
 			number: 5,
-			title: "Get Comprehensive Results",
+			title: 'Get Comprehensive Results',
 			description:
-				"Receive structured reports with all extracted data, analysis results, and module outputs.",
+				'Receive structured reports with all extracted data, analysis results, and module outputs.',
 			icon: FileJson,
 			details: [
-				"Structured JSON/CSV exports",
-				"Interactive web dashboard",
-				"Downloadable reports",
+				'Structured JSON/CSV exports',
+				'Interactive web dashboard',
+				'Downloadable reports',
 			],
 		},
 		{
 			number: 6,
-			title: "Test & Validate",
+			title: 'Test & Validate',
 			description:
 				"Use the generated notebook to test the paper's claims with mock data and your own datasets.",
 			icon: CheckCircle2,
 			details: [
-				"Run experiments in Jupyter",
-				"Compare with original results",
-				"Identify supporting or contradicting evidence",
+				'Run experiments in Jupyter',
+				'Compare with original results',
+				'Identify supporting or contradicting evidence',
 			],
 		},
 	];
 
 	return (
 		<main className="min-h-screen bg-background">
-			<Navbar />
-
 			{/* Hero Section */}
 			<section className="px-4 pt-32 pb-16 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-7xl">
@@ -108,8 +104,8 @@ export default function HowItWorksPage() {
 					</h1>
 
 					<p className="max-w-2xl text-lg text-muted-foreground">
-						A six-step process to transform research papers into interactive analysis tools
-						powered by AI.
+						A six-step process to transform research papers into interactive
+						analysis tools powered by AI.
 					</p>
 				</div>
 			</section>
@@ -126,14 +122,10 @@ export default function HowItWorksPage() {
 								<div key={step.number}>
 									<div
 										className={`grid items-center gap-8 md:grid-cols-2 ${
-											!isEven && "md:grid-flow-dense"
+											!isEven && 'md:grid-flow-dense'
 										}`}
 									>
-										<div
-											className={
-												!isEven ? "md:order-2" : ""
-											}
-										>
+										<div className={!isEven ? 'md:order-2' : ''}>
 											<div className="mb-4 flex items-center gap-4">
 												<div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary font-bold text-lg text-primary-foreground">
 													{step.number}
@@ -141,9 +133,7 @@ export default function HowItWorksPage() {
 												<Icon className="h-8 w-8 text-primary" />
 											</div>
 
-											<h2 className="mb-4 font-bold text-3xl">
-												{step.title}
-											</h2>
+											<h2 className="mb-4 font-bold text-3xl">{step.title}</h2>
 											<p className="mb-6 text-lg text-muted-foreground">
 												{step.description}
 											</p>
@@ -153,28 +143,19 @@ export default function HowItWorksPage() {
 													Key Features
 												</h3>
 												<ul className="space-y-2">
-													{step.details.map(
-														(detail, i) => (
-															<li
-																key={i}
-																className="flex items-start gap-3"
-															>
-																<CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-																<span className="text-sm">
-																	{detail}
-																</span>
-															</li>
-														)
-													)}
+													{step.details.map((detail, i) => (
+														<li key={i} className="flex items-start gap-3">
+															<CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+															<span className="text-sm">{detail}</span>
+														</li>
+													))}
 												</ul>
 											</div>
 										</div>
 
 										<div
 											className={`flex min-h-64 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 p-8 ${
-												!isEven
-													? "md:order-1"
-													: ""
+												!isEven ? 'md:order-1' : ''
 											}`}
 										>
 											<Icon className="h-32 w-32 text-primary/30" />
@@ -201,32 +182,34 @@ export default function HowItWorksPage() {
 			{/* Data Flow Diagram */}
 			<section className="bg-card/50 px-4 py-16 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-7xl">
-					<h2 className="mb-12 text-center font-bold text-3xl">Data Flow Architecture</h2>
+					<h2 className="mb-12 text-center font-bold text-3xl">
+						Data Flow Architecture
+					</h2>
 
 					<div className="overflow-x-auto rounded-lg border border-border bg-background p-8">
 						<div className="min-w-max">
 							<div className="flex items-center justify-between gap-4">
 								{[
 									{
-										label: "Paper Upload",
-										icon: "📄",
+										label: 'Paper Upload',
+										icon: '📄',
 									},
-									{ label: "AI Parsing", icon: "🧠" },
+									{ label: 'AI Parsing', icon: '🧠' },
 									{
-										label: "Extraction",
-										icon: "⚙️",
-									},
-									{
-										label: "Generation",
-										icon: "✨",
+										label: 'Extraction',
+										icon: '⚙️',
 									},
 									{
-										label: "Modules",
-										icon: "🔧",
+										label: 'Generation',
+										icon: '✨',
 									},
 									{
-										label: "Results",
-										icon: "📊",
+										label: 'Modules',
+										icon: '🔧',
+									},
+									{
+										label: 'Results',
+										icon: '📊',
 									},
 								].map((item, index) => (
 									<div key={item.label}>
@@ -355,10 +338,13 @@ export default function HowItWorksPage() {
 									1
 								</div>
 								<div>
-									<h3 className="mb-2 font-semibold">Day 1: Upload and Process</h3>
+									<h3 className="mb-2 font-semibold">
+										Day 1: Upload and Process
+									</h3>
 									<p className="text-muted-foreground text-sm">
-										You upload a machine learning research paper on neural networks. Paper2Notebook
-										processes it in seconds and extracts 15 main claims and 3 experimental methodologies.
+										You upload a machine learning research paper on neural
+										networks. Paper2Notebook processes it in seconds and
+										extracts 15 main claims and 3 experimental methodologies.
 									</p>
 								</div>
 							</div>
@@ -370,10 +356,13 @@ export default function HowItWorksPage() {
 									2
 								</div>
 								<div>
-									<h3 className="mb-2 font-semibold">Day 1: Generate Artifacts</h3>
+									<h3 className="mb-2 font-semibold">
+										Day 1: Generate Artifacts
+									</h3>
 									<p className="text-muted-foreground text-sm">
-										A Jupyter notebook is automatically generated with Python implementations of
-										the algorithms, mock datasets, and test cases for each claim.
+										A Jupyter notebook is automatically generated with Python
+										implementations of the algorithms, mock datasets, and test
+										cases for each claim.
 									</p>
 								</div>
 							</div>
@@ -387,8 +376,9 @@ export default function HowItWorksPage() {
 								<div>
 									<h3 className="mb-2 font-semibold">Day 1: Apply Storybook</h3>
 									<p className="text-muted-foreground text-sm">
-										You select the Storybook module to generate a children's story version of the
-										paper that explains the concepts simply and engagingly.
+										You select the Storybook module to generate a children's
+										story version of the paper that explains the concepts simply
+										and engagingly.
 									</p>
 								</div>
 							</div>
@@ -400,11 +390,13 @@ export default function HowItWorksPage() {
 									4
 								</div>
 								<div>
-									<h3 className="mb-2 font-semibold">Day 2-3: Test & Validate</h3>
+									<h3 className="mb-2 font-semibold">
+										Day 2-3: Test & Validate
+									</h3>
 									<p className="text-muted-foreground text-sm">
-										You run the generated notebook, testing each claim with mock data. You can
-										modify parameters and datasets to understand how claims hold under different
-										conditions.
+										You run the generated notebook, testing each claim with mock
+										data. You can modify parameters and datasets to understand
+										how claims hold under different conditions.
 									</p>
 								</div>
 							</div>
@@ -418,8 +410,9 @@ export default function HowItWorksPage() {
 								<div>
 									<h3 className="mb-2 font-semibold">Day 3: Share & Export</h3>
 									<p className="text-muted-foreground text-sm">
-										Export results as JSON for your pipeline, download the notebook for your team,
-										or share the Storybook version with non-technical stakeholders.
+										Export results as JSON for your pipeline, download the
+										notebook for your team, or share the Storybook version with
+										non-technical stakeholders.
 									</p>
 								</div>
 							</div>
@@ -433,7 +426,8 @@ export default function HowItWorksPage() {
 				<div className="mx-auto max-w-3xl text-center">
 					<h2 className="mb-4 font-bold text-3xl">Ready to Start?</h2>
 					<p className="mb-8 text-lg text-muted-foreground">
-						Upload your first research paper and experience the full power of Paper2Notebook.
+						Upload your first research paper and experience the full power of
+						Paper2Notebook.
 					</p>
 					<Button size="lg" asChild>
 						<Link href="/dashboard" className="gap-2">
@@ -442,8 +436,6 @@ export default function HowItWorksPage() {
 					</Button>
 				</div>
 			</section>
-
-			<Footer />
 		</main>
 	);
 }
