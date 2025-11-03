@@ -7,6 +7,15 @@ const constructAPIUrl = (path: string) => {
 export const fetchAPI = async (path: string) => {
 	const req = await fetch(constructAPIUrl(path), { method: "GET" });
 
+    if (req.status === 404) {
+        throw new Error('404 Not Found: The requested paper could not be found.');
+    }
+
+    if (!req.ok) {
+        const errorDetail = await req.text();
+        throw new Error(`API Request Failed: ${req.status} ${req.statusText} - Detail: ${errorDetail.substring(0, 150)}...`);
+    }
+
 	return req.json();
 };
 
