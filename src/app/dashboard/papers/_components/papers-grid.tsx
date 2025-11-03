@@ -1,14 +1,52 @@
+'use client';
 import Link from 'next/link';
+import { useMemo, useState } from 'react';
+import { Search } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+	Empty,
+	EmptyDescription,
+	EmptyHeader,
+	EmptyMedia,
+	EmptyTitle,
+} from '@/components/ui/empty';
 import type { PaperSchema } from '../_data/schemas';
 import { getStatusIcon } from '../_data/tools';
+import { PapersSearchbar } from './papers-searchbar';
 
 export function PapersGrid({ papers }: { papers: PaperSchema[] }) {
+	const [searchQuery, setSearchQuery] = useState('');
+
+	const filteredPapers = useMemo(() => {
+		return papers.filter((paper) =>
+			paper.title.toLowerCase().includes(searchQuery.toLowerCase()),
+		);
+	}, [papers, searchQuery]);
+
 	return (
-		<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
-			{papers.map((paper) => (
-				<PaperTile paper={paper} key={paper.id} />
-			))}
+		<div>
+			<PapersSearchbar onSearch={setSearchQuery} />
+			{filteredPapers.length === 0 ? (
+				<Empty>
+					<EmptyHeader>
+						<EmptyMedia>
+							<Search className="h-6 w-6" />
+						</EmptyMedia>
+						<EmptyTitle>No papers found</EmptyTitle>
+						<EmptyDescription>
+							{searchQuery
+								? `No papers match "${searchQuery}". Try adjusting your search.`
+								: 'No papers available yet.'}
+						</EmptyDescription>
+					</EmptyHeader>
+				</Empty>
+			) : (
+				<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
+					{filteredPapers.map((paper) => (
+						<PaperTile paper={paper} key={paper.id} />
+					))}
+				</div>
+			)}
 		</div>
 	);
 }
