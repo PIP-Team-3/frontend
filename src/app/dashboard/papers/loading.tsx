@@ -1,3 +1,4 @@
+import { Search } from 'lucide-react';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { BreadcrumbSetter } from '../_components/breadcrumb-context';
@@ -13,6 +14,14 @@ export default function PapersLoading() {
 				<Skeleton className="h-9 w-[119px] rounded-md" />
 			</div>
 
+			{/* Searchbar Skeleton */}
+			<div className="mb-6 flex items-center gap-2">
+				<Search className="h-5 w-5 text-gray-300" />
+				<Skeleton className="border border-input flex-1 px-3 py-2 text-sm text-transparent">
+					Search papers by name placeholder
+				</Skeleton>
+			</div>
+
 			{/* Papers Grid Skeleton */}
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
 				{Array.from({ length: 6 }).map((_, i) => (
@@ -20,7 +29,6 @@ export default function PapersLoading() {
 						<CardHeader className="flex flex-row items-center justify-between gap-2">
 							<div className="flex-1 space-y-2">
 								<Skeleton className="h-6 w-3/4 rounded-md" />
-								<Skeleton className="h-4 w-1/2 rounded-md" />
 							</div>
 							<Skeleton className="h-5 w-5 rounded-md" />
 						</CardHeader>
