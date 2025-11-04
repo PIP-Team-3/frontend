@@ -50,3 +50,45 @@ Implemented the paper upload feature that allows users to upload research papers
 - Dialog closes automatically on success
 - Error messages display detailed API responses
 - Form state is cleared after successful upload
+
+## Daewoong Lim Contribution
+
+### Individual Paper Fetch Functionality
+
+Implemented the paper fetch feature that allows users to see information about each research paper at the Paper2Notebook platform.
+
+**Implementation Date:** November 3, 2025
+
+#### What Was Implemented
+
+- **Retrieve File Support**: Users can click on the card at dashboard/paper/ or type in the url to view paper details page at dashboard/papers/[id].
+- **Error handling**: Appropriate error message is displayed when there is an error.
+
+#### Files Modified
+
+1. **`src/app/dashboard/papers/[id]/page.tsx`**
+   - Wrapped the existing code in try block to catch error
+   - Created helper functions formatDate and DetailItem to help in render
+   - Modified return html code to render additional information
+
+2. **`src/app/dashboard/papers/_data/fetchers.ts`**
+   - Created `getPaper()` function to retrieve from papers table for a single paper
+
+3. **`src/lib/api.ts`**
+   - Added conditional statements to throw error and not parse JSON if nothing is fetched
+
+#### Technical Details
+
+- **API Endpoint**: `GET /papers/:id`
+- **Request Format**: Uses dynamic route parameter (params.id) from Next.js App Router to fetch a single paper’s data through getPaper() in fetchers.ts
+- **Data Handling**: Fetch result is validated before rendering; missing or malformed data triggers a controlled error message.
+- **Helper Utilities**: Added formatDate() for date formatting and DetailItem component for consistent UI rendering of each paper detail.
+- **Error Handling**: Wrapped API call in try/catch block — displays fallback UI when fetch fails instead of crashing the page.
+- **Lines Changed**: ~150 lines across 3 core files
+- **No New Dependencies**: Used existing React, Next.js, and Zod libraries
+
+#### User Experience Improvements
+- Users can now directly open a specific paper’s detail page from dashboard cards or by URL.
+- Error messages clearly describe fetch or network issues.
+- Data such as title, status, date added, and paper id are formatted neatly with consistent layout.
+- Provides smoother navigation flow within the Paper2Notebook dashboard — no blank screens or unhandled errors when a paper is missing or inaccessible.
