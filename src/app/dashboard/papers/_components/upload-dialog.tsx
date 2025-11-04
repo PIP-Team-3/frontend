@@ -1,8 +1,8 @@
 'use client';
 
 import { Link as LinkIcon, Upload } from 'lucide-react';
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
 	Dialog,
@@ -82,7 +82,9 @@ export function UploadDialog({ open, onOpenChange }: UploadDialogProps) {
 		} catch (error) {
 			console.error('Upload failed:', error);
 			// Keep dialog open so user can retry
-			alert(`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+			alert(
+				`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
+			);
 		} finally {
 			setIsUploading(false);
 		}

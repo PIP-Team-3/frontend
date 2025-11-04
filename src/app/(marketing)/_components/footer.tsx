@@ -1,5 +1,5 @@
-import { BookOpen } from "lucide-react";
-import Link from "next/link";
+import { BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 export function Footer() {
 	return (
@@ -10,17 +10,26 @@ export function Footer() {
 						<h3 className="mb-4 font-semibold text-sm">Product</h3>
 						<ul className="space-y-2">
 							<li>
-								<Link href="/features" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<Link
+									href="/features"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Features
 								</Link>
 							</li>
 							<li>
-								<Link href="/modules" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<Link
+									href="/modules"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Modules
 								</Link>
 							</li>
 							<li>
-								<Link href="/how-it-works" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<Link
+									href="/how-it-works"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									How It Works
 								</Link>
 							</li>
@@ -30,17 +39,26 @@ export function Footer() {
 						<h3 className="mb-4 font-semibold text-sm">Resources</h3>
 						<ul className="space-y-2">
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Documentation
 								</a>
 							</li>
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Blog
 								</a>
 							</li>
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Community
 								</a>
 							</li>
@@ -50,17 +68,26 @@ export function Footer() {
 						<h3 className="mb-4 font-semibold text-sm">Company</h3>
 						<ul className="space-y-2">
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									About
 								</a>
 							</li>
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Contact
 								</a>
 							</li>
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Privacy
 								</a>
 							</li>
@@ -70,17 +97,26 @@ export function Footer() {
 						<h3 className="mb-4 font-semibold text-sm">Connect</h3>
 						<ul className="space-y-2">
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Twitter
 								</a>
 							</li>
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									GitHub
 								</a>
 							</li>
 							<li>
-								<a href="#" className="text-muted-foreground text-sm transition hover:text-foreground">
+								<a
+									href="#"
+									className="text-muted-foreground text-sm transition hover:text-foreground"
+								>
 									Discord
 								</a>
 							</li>

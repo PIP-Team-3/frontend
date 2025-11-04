@@ -1,3 +1,3 @@
 export default function StatusPage() {
-	return "hi";
+	return 'hi';
 }

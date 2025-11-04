@@ -1,4 +1,4 @@
-import { CircleCheck, Clock, AlertCircle, type LucideIcon } from 'lucide-react';
+import { AlertCircle, CircleCheck, Clock, type LucideIcon } from 'lucide-react';
 
 export interface StatusIcon {
 	icon: LucideIcon;

@@ -8,6 +8,23 @@ const incomingPaperSchema = z.object({
 	source_url: z.url().nullable().or(z.string('')),
 });
 
+export const paperStages = [
+	'ingest',
+	'extract',
+	'plan',
+	'generate_test',
+	'run_test',
+	'report',
+] as const;
+
+export type PaperStage = (typeof paperStages)[number];
+
+export interface PaperStats {
+	tokens: number;
+	cost: number;
+	runningTime: number;
+}
+
 export const paperSchema = incomingPaperSchema.transform((data) => ({
 	id: data.id,
 	title: data.title,
@@ -16,4 +33,7 @@ export const paperSchema = incomingPaperSchema.transform((data) => ({
 	sourceUrl: data.source_url,
 }));
 
-export type PaperSchema = z.infer<typeof paperSchema>;
+export type PaperSchema = z.infer<typeof paperSchema> & {
+	stage: PaperStage;
+	stats: PaperStats;
+};

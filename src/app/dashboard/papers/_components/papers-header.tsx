@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { Upload } from 'lucide-react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { UploadDialog } from './upload-dialog';
 
@@ -17,7 +17,10 @@ export function PapersHeader() {
 					Upload Paper
 				</Button>
 			</div>
-			<UploadDialog open={uploadDialogOpen} onOpenChange={setUploadDialogOpen} />
+			<UploadDialog
+				open={uploadDialogOpen}
+				onOpenChange={setUploadDialogOpen}
+			/>
 		</>
 	);
 }

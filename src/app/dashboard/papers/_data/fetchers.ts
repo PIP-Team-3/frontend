@@ -1,18 +1,34 @@
 import { z } from 'zod';
 import { fetchAPI, uploadFileAPI } from '@/lib/api';
-import { type PaperSchema, paperSchema } from './schemas';
+import { type PaperSchema, paperSchema, paperStages } from './schemas';
 
 export async function getAllPapers(): Promise<PaperSchema[]> {
 	const papersRes = await fetchAPI('/papers');
-	return z.array(paperSchema).parse(papersRes);
+	return z.array(paperSchema).parse(papersRes).map(mockPaper);
 }
 
 export async function getPaper(id: string): Promise<PaperSchema> {
 	const paperRes = await fetchAPI(`/papers/${id}`);
-	return paperSchema.parse(paperRes);
+	return mockPaper(paperSchema.parse(paperRes));
+}
+export function mockPaper(paper: z.infer<typeof paperSchema>): PaperSchema {
+	return Object.assign(
+		{
+			stage: paperStages[Math.floor(Math.random() * paperStages.length)],
+			stats: {
+				tokens: Math.floor(Math.random() * 10000 + 10),
+				cost: Math.random() * 50,
+				runningTime: Math.floor(Math.random() * 1000) + 10,
+			},
+		},
+		paper,
+	);
 }
 
-export async function uploadPaper(file?: File, url?: string): Promise<PaperSchema> {
+export async function uploadPaper(
+	file?: File,
+	url?: string,
+): Promise<PaperSchema> {
 	const formData = new FormData();
 
 	if (file) {

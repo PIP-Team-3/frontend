@@ -29,7 +29,9 @@ export function Navbar() {
 							<div className="flex size-8 items-center justify-center rounded-lg bg-blue-300/50 backdrop-blur-sm">
 								<BookOpen className="size-4 text-blue-700" />
 							</div>
-							<span className="hidden font-bold text-lg sm:inline">Paper2Notebook</span>
+							<span className="hidden font-bold text-lg sm:inline">
+								Paper2Notebook
+							</span>
 						</Link>
 
 						{/* Desktop Navigation */}
