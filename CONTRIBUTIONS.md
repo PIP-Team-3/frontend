@@ -6,6 +6,11 @@
 
 Implemented the paper upload feature that allows users to upload research papers to the Paper2Notebook platform via both file uploads and URL-based uploads.
 
+## Ray Contribution
+
+### Added the "Dashboard Overview" page, allowing users to see how many papers are processed, the date of the last upload, any recent activity(uploading a PDF, processing a storybook, etc), and a basic "How-to-use" tab.
+
+
 **Implementation Date:** November 3, 2025
 
 #### What Was Implemented
