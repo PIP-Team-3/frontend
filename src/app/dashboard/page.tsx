@@ -56,21 +56,21 @@ export default function DashboardOverview() {
 									huang_2017_densenet.pdf
 								</span>
 							</td>
-							<td className="flex justify-center items-center gap-1 py-2 text-green-600">
+							<td className="flex items-center justify-center gap-1 py-2 text-green-600">
 								<CheckCircle size={16} /> Completed
 							</td>
 						</tr>
 						<tr className="border-gray-100 border-b transition hover:bg-[#4E6BC2]/5">
 							<td className="py-2">Nov 2</td>
 							<td>Applied Storybook module</td>
-							<td className="flex justify-center items-center gap-1 py-2 text-[#4E6BC2]">
+							<td className="flex items-center justify-center gap-1 py-2 text-[#4E6BC2]">
 								<Brain size={16} /> Processed
 							</td>
 						</tr>
 						<tr className="border-gray-100 border-b transition hover:bg-[#4E6BC2]/5">
 							<td className="py-2">Nov 1</td>
 							<td>Added Comparison analysis</td>
-							<td className="flex justify-center items-center gap-1 py-2 text-yellow-600">
+							<td className="flex items-center justify-center gap-1 py-2 text-yellow-600">
 								<Clock size={16} /> Running
 							</td>
 						</tr>
@@ -82,7 +82,7 @@ export default function DashboardOverview() {
 									miller_2018_hot_hand.pdf
 								</span>
 							</td>
-							<td className="flex justify-center items-center gap-1 py-2 text-green-600">
+							<td className="flex items-center justify-center gap-1 py-2 text-green-600">
 								<CheckCircle size={16} /> Completed
 							</td>
 						</tr>

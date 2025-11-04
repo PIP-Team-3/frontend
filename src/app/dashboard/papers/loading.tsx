@@ -17,7 +17,7 @@ export default function PapersLoading() {
 			{/* Searchbar Skeleton */}
 			<div className="mb-6 flex items-center gap-2">
 				<Search className="h-5 w-5 text-gray-300" />
-				<Skeleton className="border border-input flex-1 px-3 py-2 text-sm text-transparent">
+				<Skeleton className="flex-1 border border-input px-3 py-2 text-sm text-transparent">
 					Search papers by name placeholder
 				</Skeleton>
 			</div>
