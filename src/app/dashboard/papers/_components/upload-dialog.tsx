@@ -2,6 +2,7 @@
 
 import { Link as LinkIcon, Upload } from 'lucide-react';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
 	Dialog,
@@ -18,6 +19,7 @@ import {
 	TabsList,
 	TabsTrigger,
 } from '../../../../components/animate-ui/components/radix/tabs';
+import { uploadPaper } from '../_data/fetchers';
 
 interface UploadDialogProps {
 	open: boolean;
@@ -25,9 +27,11 @@ interface UploadDialogProps {
 }
 
 export function UploadDialog({ open, onOpenChange }: UploadDialogProps) {
+	const router = useRouter();
 	const [file, setFile] = useState<File | null>(null);
 	const [url, setUrl] = useState('');
 	const [isDragging, setIsDragging] = useState(false);
+	const [isUploading, setIsUploading] = useState(false);
 
 	const handleDragOver = (e: React.DragEvent) => {
 		e.preventDefault();
@@ -65,11 +69,23 @@ export function UploadDialog({ open, onOpenChange }: UploadDialogProps) {
 			return;
 		}
 
-		// TODO: Implement upload logic
-		console.log('Uploading:', file ? `File: ${file.name}` : `URL: ${url}`);
-		onOpenChange(false);
-		setFile(null);
-		setUrl('');
+		setIsUploading(true);
+
+		try {
+			await uploadPaper(file || undefined, url || undefined);
+
+			// Success - close dialog and refresh papers list
+			onOpenChange(false);
+			setFile(null);
+			setUrl('');
+			router.refresh();
+		} catch (error) {
+			console.error('Upload failed:', error);
+			// Keep dialog open so user can retry
+			alert(`Upload failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+		} finally {
+			setIsUploading(false);
+		}
 	};
 
 	const handleDialogOpenChange = (newOpen: boolean) => {
@@ -154,10 +170,10 @@ export function UploadDialog({ open, onOpenChange }: UploadDialogProps) {
 				{/* Upload Button */}
 				<Button
 					onClick={handleUpload}
-					disabled={!file && !url.trim()}
+					disabled={(!file && !url.trim()) || isUploading}
 					className="w-full"
 				>
-					Upload
+					{isUploading ? 'Uploading...' : 'Upload'}
 				</Button>
 			</DialogContent>
 		</Dialog>
