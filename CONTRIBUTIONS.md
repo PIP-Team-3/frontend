@@ -1,15 +1,20 @@
 # Contributions
 
-## Jake M Contribution
+## Justin Contribution
 
-### Paper Upload Functionality
+Set up the next.js project, added basic marketing pages, created dashboard layout, setup data fetching patterns, refactor codebase to follow best practices.
 
-Implemented the paper upload feature that allows users to upload research papers to the Paper2Notebook platform via both file uploads and URL-based uploads.
+NOTE: we have strict code ownership and the frontend was my (Justin)'s job. All others contributions were minimal and constrained to support the assignment (ok from Prof Grewell gotten). 
 
 ## Ray Contribution
 
 ### Added the "Dashboard Overview" page, allowing users to see how many papers are processed, the date of the last upload, any recent activity(uploading a PDF, processing a storybook, etc), and a basic "How-to-use" tab.
 
+## Jake M Contribution
+
+### Paper Upload Functionality
+
+Implemented the paper upload feature that allows users to upload research papers to the Paper2Notebook platform via both file uploads and URL-based uploads.
 
 **Implementation Date:** November 3, 2025
 
