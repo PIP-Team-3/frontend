@@ -25,6 +25,7 @@ export default function PapersLoading() {
 			{/* Papers Grid Skeleton */}
 			<div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
 				{Array.from({ length: 6 }).map((_, i) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation> empty array for loading state </explanation>
 					<Card key={i} className="transition-colors">
 						<CardHeader className="flex flex-row items-center justify-between gap-2">
 							<div className="flex-1 space-y-2">

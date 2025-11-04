@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react';
+
 interface DetailItemProps {
 	title: string;
-	children: React.ReactNode;
+	children: ReactNode;
 }
 
 export function DetailItem({ title, children }: DetailItemProps) {

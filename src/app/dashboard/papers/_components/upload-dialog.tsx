@@ -123,11 +123,12 @@ export function UploadDialog({ open, onOpenChange }: UploadDialogProps) {
 					<TabsContents>
 						<TabsContent value="file">
 							{/* Dropzone */}
-							<div
+							<button
+								type="button"
 								onDragOver={handleDragOver}
 								onDragLeave={handleDragLeave}
 								onDrop={handleDrop}
-								className={`cursor-pointer rounded-lg border-2 border-dashed p-8 text-center transition ${
+								className={`w-full cursor-pointer rounded-lg border-2 border-dashed p-8 text-center transition ${
 									isDragging
 										? 'border-blue-500 bg-blue-50'
 										: 'border-gray-300 hover:border-gray-400'
@@ -149,16 +150,20 @@ export function UploadDialog({ open, onOpenChange }: UploadDialogProps) {
 										or click to select a file
 									</p>
 								</label>
-							</div>
+							</button>
 						</TabsContent>
 
 						<TabsContent value="url">
 							{/* URL Input */}
 							<div>
-								<label className="mb-2 block font-medium text-sm">
+								<label
+									htmlFor="url-input"
+									className="mb-2 block font-medium text-sm"
+								>
 									PDF Link
 								</label>
 								<Input
+									id="url-input"
 									type="url"
 									placeholder="https://example.com/paper.pdf"
 									value={url}

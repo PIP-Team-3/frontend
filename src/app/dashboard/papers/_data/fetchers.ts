@@ -40,5 +40,5 @@ export async function uploadPaper(
 	}
 
 	const paperRes = await uploadFileAPI('/papers/', formData);
-	return paperSchema.parse(paperRes);
+	return mockPaper(paperSchema.parse(paperRes));
 }

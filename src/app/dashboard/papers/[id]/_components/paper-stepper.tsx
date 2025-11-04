@@ -10,6 +10,7 @@ import {
 	TestTube,
 	Zap,
 } from 'lucide-react';
+import type { ReactNode } from 'react';
 import type { PaperStage } from '../../_data/schemas';
 import { paperStages } from '../../_data/schemas';
 
@@ -20,7 +21,7 @@ interface PaperStepperProps {
 
 const stageConfig: Record<
 	PaperStage,
-	{ label: string; description: string; icon: React.ReactNode }
+	{ label: string; description: string; icon: ReactNode }
 > = {
 	ingest: {
 		label: 'Ingest Paper',
